@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.use('/person', person)
 
-app.use('/clean', clean)
+app.use('/clean', person)
 
 app.use('/relationship', relationship)
 
