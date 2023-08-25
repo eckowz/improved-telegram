@@ -1,8 +1,10 @@
 # improved-telegram
 
+![](header.png)
+
 ## Usage
 
-O propósito deste repositório é simplesmente manter o código fonte de um portal utilizado como portifólio.
+--
 
 ## Development setup
 
@@ -13,7 +15,7 @@ O propósito deste repositório é simplesmente manter o código fonte de um por
 
 ## Release History
 
-* 1.0.0
+* 0.0.3
     * Work in progress
 
 ## Meta
@@ -23,7 +25,7 @@ O propósito deste repositório é simplesmente manter o código fonte de um por
 
 [![Linkedin][linkedin-image]][linkedin-url]
 
-[https://github.com/eckowz/github-link](https://github.com/eckowz/)
+[Github-link](https://github.com/eckowz/)
 
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
