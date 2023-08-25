@@ -45,6 +45,18 @@
 							"key": "cpf",
 							"value": "01234567891",
 							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "maria",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "cpf",
+							"value": "09876543210",
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
@@ -131,6 +143,69 @@
 							"key": "CPF",
 							"value": "01234567891"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "relationship",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf1",
+							"value": "01234567891",
+							"type": "text"
+						},
+						{
+							"key": "cpf2",
+							"value": "09876543210",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/relationship",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"relationship"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clean",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/clean",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"clean"
 					]
 				}
 			},
