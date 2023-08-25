@@ -3,31 +3,23 @@
 const express = require('express')
 const router = express.Router()
 const errors = require('../res/errorMessage')
-
-let persons = []
+const utils = require('../utils/response')
+const personService = require('../service/person')
 
 router.get('/check', (req, res) => {
-  res.send(`Atualmente existem ${persons.length} amigos cadastrados.`)
-});
+  res.send(personService.check())
+})
 
 router.get('/:CPF', (req, res) => {
-  const { CPF } = req.params
-  console.log(req.query)
-  console.log(CPF)
-  const person = persons.find((person) => person.cpf === CPF)
-  person ? res.status(200).send(person) : res.status(errors.cpfNotFound.httpCode).send(errors.cpfNotFound)
-});
+  res.send(personService.getByCpf(req.params.CPF))
+})
 
 router.post('/', (req, res) => {
-  const newPerson = req.body
-  if (newPerson.cpf.length != 11) res.status(errors.invalidCpf.httpCode).send(errors.invalidCpf)
-  persons.some(e => e.cpf === newPerson.cpf) ? res.status(errors.cpfAlreadyExist.httpCode).send(errors.cpfAlreadyExist) : persons.push(newPerson)
-  res.status(200).send('Cadastro Realizado!')
-});
+  res.send(personService.postNewPerson(req))
+})
 
 router.delete('', (req, res) => {
-  persons = []
-  res.send(`Cadastros excluídos.`)
+  res.send(personService.deletePerson(req))
 })
 
 module.exports = router
