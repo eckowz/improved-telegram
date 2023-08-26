@@ -1,5 +1,4 @@
 const utils = require('../utils/response')
-const errors = require('../res/errorMessage')
 const person = require('./person')
 const relationship = require('./relationship')
 const assembler = require('../utils/assembler')

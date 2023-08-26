@@ -24,6 +24,13 @@ const postNewRelationship = (req) => {
   relationships.push(newRelationship)
 }
 
+const deleteRelationship = () => {
+  while (relationships.length > 0) {
+    relationships.pop();
+  }
+  return utils.msg(`Cadastros excluídos.`)
+}
+
 const createRelationship = (req) => {
   const checkCpf1 = person.getByCpf(req.cpf1)
   const checkCpf2 = person.getByCpf(req.cpf2)
@@ -41,5 +48,6 @@ const createRelationship = (req) => {
 module.exports = {
   createRelationship,
   check,
-  getRelationshipByCpf
+  getRelationshipByCpf,
+  deleteRelationship
 }

@@ -1,5 +1,3 @@
-// wiki.js - Wiki route module
-
 const express = require('express')
 const router = express.Router()
 const personService = require('../service/person')
@@ -14,10 +12,6 @@ router.get('/:CPF', (req, res) => {
 
 router.post('/', (req, res) => {
   res.send(personService.postNewPerson(req))
-})
-
-router.delete('', (req, res) => {
-  res.send(personService.deletePerson(req))
 })
 
 module.exports = router

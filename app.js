@@ -2,6 +2,8 @@ const express = require("express")
 const person = require("./handlers/person")
 const relationship = require("./handlers/relationship")
 const recommendations = require("./handlers/recommendations")
+const clean = require("./handlers/clean")
+
 const app = express()
 const port = 3000;
 
@@ -18,7 +20,7 @@ app.get('/', (req, res) => {
 
 app.use('/person', person)
 
-app.use('/clean', person)
+app.use('/clean', clean)
 
 app.use('/relationship', relationship)
 

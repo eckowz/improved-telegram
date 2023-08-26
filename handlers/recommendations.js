@@ -1,5 +1,3 @@
-// wiki.js - Wiki route module
-
 const express = require("express")
 const router = express.Router()
 const recommendationsService = require('../service/recommendations')
