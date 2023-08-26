@@ -7,6 +7,273 @@
 	},
 	"item": [
 		{
+			"name": "person",
+			"item": [
+				{
+					"name": "person",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/person/:CPF",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"person",
+								":CPF"
+							],
+							"variable": [
+								{
+									"key": "CPF",
+									"value": "01234567890"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "person check",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/person/check",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"person",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "person",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "joao",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "01234567890",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "maria",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cpf",
+									"value": "09876543210",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "eduardo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cpf",
+									"value": "45678912300",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "monica",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cpf",
+									"value": "98765465445",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/person",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"person"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "relationship",
+			"item": [
+				{
+					"name": "relationship check",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/relationship/check",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"relationship",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "relationship",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cpf1",
+									"value": "01234567890",
+									"type": "text"
+								},
+								{
+									"key": "cpf2",
+									"value": "09876543210",
+									"type": "text"
+								},
+								{
+									"key": "cpf1",
+									"value": "09876543210",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cpf2",
+									"value": "45678912300",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/relationship",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"relationship"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "recommendations",
+			"item": [
+				{
+					"name": "recommendations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/recommendations/:CPF",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"recommendations",
+								":CPF"
+							],
+							"variable": [
+								{
+									"key": "CPF",
+									"value": "01234567890"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "mainRoute",
 			"request": {
 				"method": "GET",
@@ -23,163 +290,6 @@
 					"port": "3000",
 					"path": [
 						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "person",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "name",
-							"value": "joao",
-							"type": "text"
-						},
-						{
-							"key": "cpf",
-							"value": "01234567891",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "maria",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "cpf",
-							"value": "09876543210",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": {
-					"raw": "http://127.0.0.1:3000/person",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3000",
-					"path": [
-						"person"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "check",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": []
-				},
-				"url": {
-					"raw": "http://127.0.0.1:3000/person/check",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3000",
-					"path": [
-						"person",
-						"check"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "person",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://127.0.0.1:3000/person/:CPF",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3000",
-					"path": [
-						"person",
-						":CPF"
-					],
-					"variable": [
-						{
-							"key": "CPF",
-							"value": "01234567891"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "relationship",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "cpf1",
-							"value": "01234567891",
-							"type": "text"
-						},
-						{
-							"key": "cpf2",
-							"value": "09876543210",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://127.0.0.1:3000/relationship",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3000",
-					"path": [
-						"relationship"
 					]
 				}
 			},

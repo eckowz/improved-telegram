@@ -9,7 +9,7 @@
 ```sh
     mocha
 ```
-    OR
+OR
 ```sh
     npm test
 ```
@@ -22,6 +22,8 @@
         ```sh
             nodemon .\app.js
         ```
+
+* Postman collection included in folder: './postmanCollection'
 
 ## Development setup
 
