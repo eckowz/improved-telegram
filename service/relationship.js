@@ -1,13 +1,27 @@
 const person = require('./person')
 const utils = require('../utils/response')
 
-const relationships = []
+const relationships = [
+  { cpf1: '01234567890', cpf2: '09876543210'},//joao - maria
+  { cpf1: '01234567890', cpf2: '45678912300'},//joao - eduardo
+  { cpf1: '09876543210', cpf2: '98765465445'},//maria - monica
+  { cpf1: '45678912300', cpf2: '98765465445'},//eduardo - monica
+  { cpf1: '45678912300', cpf2: '85205468428'},//eduardo - felipe
+  
+]
+
+const check = () => {
+  return utils.msg(`Atualmente existem ${relationships.length} relacionamentos cadastrados.`)
+}
+
+const getRelationshipByCpf = (req) => {
+  const response = relationships.filter((relationship) => relationship.cpf1.includes(req) || relationship.cpf2.includes(req))
+  return response
+}
 
 const postNewRelationship = (req) => {
   const newRelationship = req
-  console.log(newRelationship)
   relationships.push(newRelationship)
-  console.log(relationships)
 }
 
 const createRelationship = (req) => {
@@ -25,5 +39,7 @@ const createRelationship = (req) => {
 }
 
 module.exports = {
-  createRelationship
+  createRelationship,
+  check,
+  getRelationshipByCpf
 }

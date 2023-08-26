@@ -2,8 +2,6 @@
 
 const express = require('express')
 const router = express.Router()
-const errors = require('../res/errorMessage')
-const utils = require('../utils/response')
 const personService = require('../service/person')
 
 router.get('/check', (req, res) => {
