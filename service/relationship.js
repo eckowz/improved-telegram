@@ -1,14 +1,8 @@
 const person = require('./person')
 const utils = require('../utils/response')
+const constants = require('../res/constants')
 
-const relationships = [
-  { cpf1: '01234567890', cpf2: '09876543210'},//joao - maria
-  { cpf1: '01234567890', cpf2: '45678912300'},//joao - eduardo
-  { cpf1: '09876543210', cpf2: '98765465445'},//maria - monica
-  { cpf1: '45678912300', cpf2: '98765465445'},//eduardo - monica
-  { cpf1: '45678912300', cpf2: '85205468428'},//eduardo - felipe
-  
-]
+const relationships = []
 
 const check = () => {
   return utils.msg(`Atualmente existem ${relationships.length} relacionamentos cadastrados.`)
@@ -28,7 +22,7 @@ const deleteRelationship = () => {
   while (relationships.length > 0) {
     relationships.pop();
   }
-  return utils.msg(`Cadastros excluídos.`)
+  return utils.msg(constants.deleteCompleted)
 }
 
 const createRelationship = (req) => {
@@ -36,7 +30,7 @@ const createRelationship = (req) => {
   const checkCpf2 = person.getByCpf(req.cpf2)
   if (checkCpf1.Response && checkCpf2.Response) {
     postNewRelationship(req)
-    return utils.msg('Relacionamento criado.')
+    return utils.msg(constants.relationshipCreated)
   } else {
     return {
       cpf1: checkCpf1,
@@ -46,6 +40,7 @@ const createRelationship = (req) => {
 }
 
 module.exports = {
+  postNewRelationship,
   createRelationship,
   check,
   getRelationshipByCpf,

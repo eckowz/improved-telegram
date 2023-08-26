@@ -4,18 +4,43 @@
 
 ## Usage
 
---
+* Make sure that you have all dependencies from 'Development setup'
+* To run tests:
+```sh
+    mocha
+```
+    OR
+```sh
+    npm test
+```
+* Server:
+    * To start server manually:
+        ```sh
+            node app.js
+        ```
+    * To start server with nodemon
+        ```sh
+            nodemon .\app.js
+        ```
 
 ## Development setup
 
 ```sh
     npm install
     npm install express
+    npm install should
+    npm install mocha
 ```
+
+* To restart server automatically after any update on files:
+```sh
+    npm install -g nodemon
+```
+
 
 ## Release History
 
-* 0.0.3
+* 1.0.0
     * Work in progress
 
 ## Meta
