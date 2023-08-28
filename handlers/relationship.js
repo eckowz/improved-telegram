@@ -4,13 +4,13 @@ const relationshipService = require('../service/relationship')
 
 router.get('/check', (req, res, next) => {
   relationshipService.check()
-    .then(response => next(res.json(response)))
+    .then(response => res.json(response))
     .catch(err => next(res.status(err.httpCode).json(err)))
 })
 
 router.post('/', (req, res, next) => {
   relationshipService.createRelationship(req.body)
-    .then(response => next(res.json(response)))
+    .then(response => res.json(response))
     .catch(err => next(res.status(err.httpCode).json(err)))
 })
 

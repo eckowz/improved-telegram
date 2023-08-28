@@ -9,10 +9,10 @@ const port = 3000;
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-// app.use((req, res, next) => {
-//   console.log(`${JSON.stringify(req.method)} - ${JSON.stringify(req.url)}`)
-//   next()
-// })
+app.use((req, res, next) => {
+  console.log(`${req.method} - ${req.url}`)
+  next()
+})
 
 app.get('/', (req, res) => {
   res.json('Acesse uma das rotas dispniveis')
