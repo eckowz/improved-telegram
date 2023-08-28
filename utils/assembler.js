@@ -1,4 +1,4 @@
-const assembleFriendsList = (owner, list) => {
+const assembleFriendsList = async (owner, list) => {
   return {
     owner: owner,
     list: list

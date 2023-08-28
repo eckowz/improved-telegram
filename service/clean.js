@@ -1,12 +1,11 @@
-const utils = require('../utils/response')
 const constants = require('../res/constants')
 const person = require('./person')
 const relationship = require('./relationship')
 
-const deleteAll = () => {
-  person.deletePerson()
-  relationship.deleteRelationship()
-  return utils.msg(constants.deleteCompleted)
+const deleteAll = async () => {
+  await person.deletePerson()
+  await relationship.deleteRelationship()
+  return constants.deleteCompleted
 }
 
 module.exports = {

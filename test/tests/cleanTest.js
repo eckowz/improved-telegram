@@ -3,7 +3,8 @@ const constants = require('../../res/constants')
 require('should')
 
 describe('Delete all persons and relationships', () => {
-  it('Should delete all', () => {
-    clean.deleteAll().Response.should.be.equal(constants.deleteCompleted)
+  it('Should delete all', async () => {
+    const response = await clean.deleteAll()
+    response.should.be.eql(constants.deleteCompleted)
   })
 })
