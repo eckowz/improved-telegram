@@ -1,37 +1,37 @@
-const utils = require('../utils/response')
 const errors = require('../res/errorMessage')
 const constants = require('../res/constants')
 
 const persons = []
 
-const check = () => {
-  return utils.msg(`Atualmente existem ${persons.length} amigos cadastrados.`)
+const check = async () => {
+  const response = `Atualmente existem ${persons.length} amigos cadastrados.`
+  return response
 }
 
-const getByCpf = (req) => {
+const getByCpf = async (req) => {
   const { cpf } = { cpf: req }
-  if (cpf.length != 11) return errors.invalidCpf
+  if (cpf.length != 11) throw errors.invalidCpf
   const person = persons.find((person) => person.cpf === cpf)
-  return person ? (utils.msg(person)) : errors.cpfNotFound
-  // return person ? res.status(200).send(utils.msg(person)) : res.status(errors.cpfNotFound.httpCode).send(errors.cpfNotFound)
+  if (!person) throw errors.cpfNotFound
+  return person
 }
 
-const postNewPerson = (req) => {
+const postNewPerson = async (req) => {
   const newPerson = req.body
-  if (newPerson.cpf.length != 11) return errors.invalidCpf
+  if (newPerson.cpf.length != 11) throw errors.invalidCpf
   if (persons.some(e => e.cpf === newPerson.cpf)) {
-    return errors.cpfAlreadyExist
+    throw errors.cpfAlreadyExist
   } else {
     persons.push(newPerson)
-    return utils.msg(constants.createCompleted)
+    return constants.createCompleted
   }
 }
 
-const deletePerson = () => {
+const deletePerson = async () => {
   while (persons.length > 0) {
     persons.pop();
   }
-  return utils.msg(constants.deleteCompleted)
+  return constants.deleteCompleted
 }
 
 module.exports = {

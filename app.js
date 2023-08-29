@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-  res.send('Acesse uma das rotas dispniveis')
+  res.json('Acesse uma das rotas dispniveis')
 })
 
 app.use('/person', person)
