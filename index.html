@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico">
   <title>Document</title>
 </head>
+
 <body>
-  init
+
+  <form action="http://127.0.0.1:3000/" method="get">
+    <button>Rota principal</button>
+  </form>
+  <br>
+
+  <form action="http://127.0.0.1:3000/person/check" method="get">
+    <button>Verificar número de pessoas cadastradas</button>
+  </form>
+  <form action="http://127.0.0.1:3000/person" method="post">
+    <input name="cpf" placeholder="Informe o CPF" required/>
+    <button>Cadastrar CPF</button>
+  </form>
+  <form action="http://127.0.0.1:3000/person/" method="get" id="getPersonByCpf">
+    <input id="personCpf" placeholder="Informe o CPF" required/>
+    <button onclick="mySubmitFunction(`getPersonByCpf`, `personCpf`)">Consultar CPF</button>
+  </form>
+  <br>
+
+  <form action="http://127.0.0.1:3000/relationship/check" method="get">
+    <button>Verificar número de relacionamentos cadastrados</button>
+  </form>
+  <form action="http://127.0.0.1:3000/relationship" method="post">
+    <input name="cpf1" placeholder="Informe o CPF" required/>
+    <input name="cpf2" placeholder="Informe o CPF" required/>
+    <button>Cadastrar relacionamento</button>
+  </form>
+  <br>
+
+  <form action="http://127.0.0.1:3000/recommendations/" method="get" id="getRecommendationByCpf">
+    <input id="recommendationCpf" placeholder="Informe o CPF" required/>
+    <button onclick="mySubmitFunction(`getRecommendationByCpf`, `recommendationCpf`)">Mostrar recomendação de
+      amigos</button>
+  </form>
+  <br>
+
+  </form>
+  <form action="http://127.0.0.1:3000/clean" method="get">
+    <button>Remover cadastros e relacionamentos</button>
+  </form>
+  <script>
+    function mySubmitFunction(formId, inputId) {
+      var myForm = document.getElementById(formId)
+      var myInput = document.getElementById(inputId)
+      var inputValue = myInput.value
+      myForm.action = myForm.action + inputValue
+      myForm.innerHTML.submit()
+    }
+  </script>
 </body>
+
 </html>
