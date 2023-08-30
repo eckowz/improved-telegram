@@ -23,4 +23,9 @@ module.exports = {
     code: code(3),
     msg: 'CPF não localizado.'
   },
+  internalServerError: {
+    httpCode: 500,
+    code: code(4),
+    msg: 'Erro interno.'
+  },
 }

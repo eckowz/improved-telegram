@@ -3,6 +3,7 @@ const person = require("./handlers/person")
 const relationship = require("./handlers/relationship")
 const recommendations = require("./handlers/recommendations")
 const clean = require("./handlers/clean")
+const errorHandler = require("./handlers/errorHandler")
 
 const app = express()
 const port = 3000;
@@ -29,3 +30,7 @@ app.use('/recommendations', recommendations)
 app.listen(port, () => {
   console.log(`App listening on port ${port}!`)
 })
+
+app.all('*', () => next())
+
+app.use(errorHandler)
